@@ -1,27 +1,16 @@
-# TaxAngular
+# Tax-Calculator 
+**ระบบไว้สำหรับการคำนวนภาษี**
+## การเตรียมตัวก่อนการใช้งาน
+ 1. clone project จาก https://github.com/theeratham/Tax-Calculator.git
+ 2. เปิด project ด้วย IDE อะไรก็ได้ เช่น visual studio code
+ 3. install nodeJs  version 14 และ angular 12 
+## วิธีการใช้งาน
+ 1. กดปุ่มเพื่อระบุประเภทการใช้งาน มี 2 ประเภท คือ Ordinary และ Additional Filing
+2. เมื่อทำการพิมพ์ตัวเลขลงในช่องต่างๆที่ระบุไว้ ระบบก็จะทำการคำนวนภาษีออกมา
+3. เมื่อกดปุ่ม next หน้าเว็บจะแสดงหน้าต่อไปที่แสดงข้อมูลทั้งหมด 
+4. ปุ่ม confirm and submit เมื่อกดปุ่มนี้จะแสดงกล่องข้อความที่ข้อมูลค่าที่ทั้งหมดที่มี แสดงมาเป็น Json message
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.18.
+![epfmjeo](https://github.com/theeratham/Tax-Calculator/assets/78341944/ed6e74fb-6d45-43a8-a0f3-967c96e46fba)
 
-## Development server
+![whihf](https://github.com/theeratham/Tax-Calculator/assets/78341944/9d01ba84-3f28-45b5-b9db-f0a11498d4b9)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
