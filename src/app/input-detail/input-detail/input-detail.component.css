@@ -1,0 +1,42 @@
+.card {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-left: 20%;
+    margin-right: 20%;
+    background-color: bisque;
+}
+
+h1 {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.app-steps {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding-left: 40%;
+    padding-right: 40%;
+}
+
+.steps-action {
+    margin-left: 20%;
+    margin-top: 20px;
+}
+
+.btn-primary {
+    width: 80px;
+    border-radius: 30px;
+}
+
+.btn-secondary {
+    width: 80px;
+    border-radius: 30px;
+}
+
+.btn-dark {
+    border-radius: 30px;
+    margin-left: 327px;
+}

@@ -1,0 +1,6 @@
+<select class="form-select" id="year" [(ngModel)]="year" (ngModelChange)="onYearChange()">
+    <option selected disabled>Select year</option>
+    <option *ngFor="let yearOption of yearOptions" [value]="yearOption" [disabled]="isFutureYear(yearOption)">
+        {{ yearOption }}
+    </option>
+</select>

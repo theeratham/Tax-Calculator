@@ -1,0 +1,12 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-8">
+            <label *ngIf="filingType === 'ordinary'" for="saleAmount">1. Total value of taxable electronic service exclusive of VAT</label>
+            <label *ngIf="filingType === 'additional'" for="saleAmount">1. Underdeclared Thai taxable electronic service</label>
+        </div>
+        <div class="col-sm-4" style="margin-bottom: 3px;">
+            <input type="text" class="form-control" name="saleAmount" id="saleAmount" (input)="getSaleAmount()" (blur)="formatSale()" [(ngModel)]="saleAmount"
+                placeholder="THB">
+        </div>
+    </div>
+</div>

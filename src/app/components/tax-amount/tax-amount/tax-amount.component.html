@@ -1,0 +1,10 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-8">
+            <label for="taxAmount">2. Total VAT to be remitted (7% of 1.)</label>
+        </div>
+        <div class="col-sm-4" style="margin-bottom: 3px;">
+            <input type="number" class="form-control" name="taxAmount" id="taxAmount" (blur)="formatTax()" (input)="getTaxAmount()"  [(ngModel)]="taxAmount" placeholder="THB">
+        </div>
+    </div>
+</div>

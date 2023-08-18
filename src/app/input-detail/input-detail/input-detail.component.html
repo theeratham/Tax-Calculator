@@ -1,0 +1,63 @@
+<h1>Submit Tax filing</h1>
+<div class="app-steps">
+    <nz-steps [nzCurrent]="0" nzSize="small" nzLabelPlacement="vertical">
+        <nz-step nzTitle="Input Detail"></nz-step>
+        <nz-step nzTitle="Review & Confirm"></nz-step>
+    </nz-steps>
+</div>
+<div class="card">
+    <h5>1.Tax Filing Detail</h5>
+    <hr>
+    <p>Type of Filing <i class="text-danger">&#42;</i> </p>
+    <app-filing-type (typeOutput)="getType($event)"></app-filing-type>
+    <div *ngIf="filingType === 'ordinary'">
+        <div class="row">
+            <div class="col-sm-8">
+                <div class="row">
+                    <p>VAT Month <i class="text-danger">&#42;</i> </p>
+                    <div class="col-sm-6">
+                        <app-month (monthSelected)="getMonth($event)"></app-month>
+                    </div>
+                    <div class="col-sm-6">
+                        <app-year (yearSelected)="getYear($event)"></app-year>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h5>2.Tax Computation</h5>
+        <hr>
+        <h6>Provide total value taxable electronic service <i class="text-danger">&#42;</i> </h6>
+        <app-sale-amount [filingType]="filingType" (saleOutput)="getSaleAmount($event)"></app-sale-amount>
+        <app-tax-amount [saleAmount]="saleAmount" (taxOutput)="getTaxAmount($event)"></app-tax-amount>
+    </div>
+    <div *ngIf="filingType === 'additional'">
+        <div class="row">
+            <div class="col-sm-8">
+                <div class="row">
+                    <p>VAT Month <i class="text-danger">&#42;</i> </p>
+                    <div class="col-sm-6">
+                        <app-month (monthSelected)="getMonth($event)"></app-month>
+                    </div>
+                    <div class="col-sm-6">
+                        <app-year (yearSelected)="getYear($event)"></app-year>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h5>2.Tax Computation</h5>
+        <hr>
+        <h6>Provide total value taxable electronic service <i class="text-danger">&#42;</i> </h6>
+        <app-sale-amount [filingType]="filingType" (saleOutput)="getSaleAmount($event)"></app-sale-amount>
+        <app-tax-amount [saleAmount]="saleAmount" (taxOutput)="getTaxAmount($event)"></app-tax-amount>
+        <h6>In case of late filling and payment, or additional filling</h6>
+        <app-surcharge [taxAmount]="taxAmount" (surchargeOutput)="getSurcharge($event)"></app-surcharge>
+        <app-penalty (penaltyOutput)="getPenalty($event)"></app-penalty>
+        <app-total-vat [taxAmount]="taxAmount" [surcharge]="surcharge" [penalty]="penalty"
+            (totalVatOutput)="getTotalVat($event)"></app-total-vat>
+    </div>
+</div>
+<div class="steps-action">
+    <button class="btn btn-secondary" (click)="next()">
+        <span>Next</span>
+    </button>
+</div>

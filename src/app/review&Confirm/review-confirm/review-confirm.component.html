@@ -1,0 +1,66 @@
+<h1>Submit Tax filing</h1>
+<div class="app-steps">
+    <nz-steps [nzCurrent]="1" nzSize="small" nzLabelPlacement="vertical">
+        <nz-step nzTitle="Input Detail"></nz-step>
+        <nz-step nzTitle="Review & Confirm"></nz-step>
+    </nz-steps>
+</div>
+<div class="card">
+    <h5>Tax Filing Detail</h5>
+    <hr>
+    <div class="row">
+        <div class="col-sm-2">
+            <label for="selectedFilingType">Type of filing</label>
+        </div>
+        <div class="col-sm-10">
+            <p>{{taxData.filingType}}</p>
+        </div>
+        <div class="col-sm-2">
+            <label for="month&year">VAT Month</label>
+        </div>
+        <div class="col-sm-10">
+            <p>{{taxData.month}} {{taxData.year}}</p>
+        </div>
+    </div>
+    <h5>Tax Computation</h5>
+    <hr>
+    <div class="row">
+        <div class="col-sm-10">
+            <label for="saleAmount">Total value of taxable electronic service exclusive of VAT</label>
+        </div>
+        <div class="col-sm-2">
+            <p>{{taxData.saleAmount | number: '1.2-2'}} THB</p>
+        </div>
+        <div class="col-sm-10">
+            <label for="taxAmount">Total VAT to be remitted</label><br>
+            <p>(7% of Total value of taxable electronic service exclusive of VAT)</p>
+        </div>
+        <div class="col-sm-2">
+            <p>{{taxData.taxAmount | number: '1.2-2'}} THB</p>
+        </div>
+        <div class="col-sm-10">
+            <label for="totalVat">Total Amount Payable</label>
+        </div>
+        <div class="col-sm-2">
+            <p>{{taxData.totalVat | number: '1.2-2'}} THB</p>
+        </div>
+    </div>
+    <h5>Declaration</h5>
+    <hr>
+    <p>I hereby certify that information given above are true and correct and agree to be bound by such information.</p>
+    <button class="btn btn-dark"data-bs-toggle="modal" data-bs-target="#myModal">
+        <span>Confirm and Submit</span>
+    </button>
+</div>
+<div bsModal #modal="bs-modal" class="modal fade" tabindex="-1" role="dialog" [config]="{backdrop: 'static'}">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title">Preview<button type="button" class="close" aria-label="Close"
+              (click)="closeModal()"><span aria-hidden="true">&times;</span></button></h3>
+        </div>
+        <div class="modal-body">
+        </div>
+      </div>
+    </div>
+  </div>
